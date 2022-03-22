@@ -15,6 +15,16 @@ const mongoose = require("mongoose");
  *   useUnifiedTopology: true,
  * }
  */
-function connect() {}
 
+const connection = () => {
+    mongoose.connect( "mongodb://localhost:27017/myApp", {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    } );
+}
+
+function connect () {
+    connection();
+}
+    
 module.exports = connect;
